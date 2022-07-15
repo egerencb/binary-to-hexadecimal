@@ -1,25 +1,20 @@
 #include <stdio.h>  
-#include <conio.h>  
+#include <stdlib.h>  
 
-void main()  
+int main()  
 {  
+    int binary, hexadecimal = 0, i = 1, remainder;
+    printf("Binary formatinda deger giriniz:");
+    scanf("%d",&binary);
     
-    int num, binary_num, decimal_num = 0, base = 1, rem;  
-    printf ("Enter a binary number with the combination of 0s and 1s: \n");  
-    scanf (" %d", &num); 
-  
-    binary_num = num; 
-      
-      
-    while ( num > 0)  
-    {  
-        rem = num % 10; 
-        decimal_num = decimal_num + rem * base;  
-        num = num / 10;   
-        base = base * 2;  
-    }  
-  
-    printf ( " The binary number is %d \t", binary_num);  
-    printf (" \n The decimal number is %d \t", decimal_num);   
-    getch();  
+    while (binary != 0){
+    	remainder = binary % 10;
+		hexadecimal = hexadecimal + remainder * i;
+		i = i * 2;
+		binary = binary / 10;
+}
+		
+	
+	printf("Hexadecimal degeri: %1X",hexadecimal);    
+      return 0;
 }  
